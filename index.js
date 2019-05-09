@@ -23,7 +23,7 @@ server.get('/api/users', (req, res) => {
 server.post('/api/users', (req, res) => {
     const user = req.body;
     console.log('request body: ', user);
-    if(user.name && usernbio) {
+    if(user.name && user.bio) {
 
     db.insert(user).then(user => {
         res.status(201).json(user)
